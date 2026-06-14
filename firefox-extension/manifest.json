@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "SIGA → iCloud Sync",
+  "version": "1.0",
+  "description": "Sync your Casa da Música SIGA schedule to your iCloud calendar",
+  "permissions": [
+    "https://siga.casadamusica.com/*",
+    "https://syncbackend-chi.vercel.app/*",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://siga.casadamusica.com/maestro/mapa/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "siga-sync@casadamusica.com",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}

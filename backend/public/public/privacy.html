@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Privacy Policy — SIGA → iCloud Sync</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: -apple-system, system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 16px; margin-top: 28px; }
+    p, li { font-size: 14px; }
+    .updated { color: #888; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy — SIGA → iCloud Sync</h1>
+  <p class="updated">Last updated: June 2026</p>
+
+  <p>
+    SIGA → iCloud Sync is a browser extension that reads your work schedule from the
+    Casa da Música SIGA system (siga.casadamusica.com) and creates matching events in
+    your personal iCloud Calendar.
+  </p>
+
+  <h2>What information is used</h2>
+  <ul>
+    <li><strong>Schedule data</strong>: the extension reads the shift table (dates, times, room, activity) from the "Mapa de Trabalhos" page you have open. This data never leaves your browser except to be sent to the sync server described below.</li>
+    <li><strong>Apple ID and app-specific password</strong>: used to authenticate with Apple's iCloud calendar service (CalDAV) so that events can be created, updated, or removed on your behalf.</li>
+  </ul>
+
+  <h2>How information is used and stored</h2>
+  <ul>
+    <li>Your Apple ID and app-specific password are stored locally in your browser's extension storage, so you don't need to re-enter them each time. This data stays on your device and is not visible to other extensions or websites.</li>
+    <li>When you click "Fetch &amp; Sync", your schedule data and iCloud credentials are sent over an encrypted (HTTPS) connection to a small sync server operated for this extension. The server uses these credentials only to connect to Apple's iCloud CalDAV service on your behalf, for the duration of the request.</li>
+    <li>The sync server does not store, log, or retain your credentials or schedule data after the request completes.</li>
+  </ul>
+
+  <h2>Third parties</h2>
+  <p>
+    Data is sent only to Apple's iCloud servers (to create/update/delete calendar events) and
+    to the sync server operated for this extension. No data is sold, shared with advertisers,
+    or used for any purpose other than syncing your schedule.
+  </p>
+
+  <h2>App-specific passwords</h2>
+  <p>
+    We recommend using an Apple <a href="https://appleid.apple.com" target="_blank" rel="noopener">app-specific password</a>
+    rather than your main Apple ID password. App-specific passwords can be revoked at any time
+    from your Apple ID account settings without affecting your main account.
+  </p>
+
+  <h2>Removing your data</h2>
+  <p>
+    To remove locally stored credentials, uninstall the extension or clear its storage via your
+    browser's extension settings. To revoke access to your iCloud account, delete the
+    app-specific password from your Apple ID account at any time.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    For questions about this policy or the extension, please contact the developer who shared
+    this extension with you.
+  </p>
+</body>
+</html>
