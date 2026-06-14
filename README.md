@@ -8,6 +8,7 @@ This repo contains three parts:
 - **`backend/`** — a small server that talks to iCloud's CalDAV API on your behalf
 - **`firefox-extension/`** — the browser extension for Firefox / Zen
 - **`chrome-extension/`** — the browser extension for Chrome / Edge / Brave
+- **`releases/`** — ready-to-install packaged versions of both extensions
 
 ---
 
@@ -25,15 +26,25 @@ Each event's notes include the **Sala** (room) for that shift.
 
 ## Installing the extension
 
+The easiest way to install is from the **`releases/`** folder, which always contains the
+latest ready-to-use packages — no need to clone the whole repo or load unpacked source.
+
 ### Firefox / Zen
 
-1. Download the latest `.xpi` from [Releases](#) *(or from the Mozilla Add-on listing, once published)*
+1. Go to [`releases/`](releases) and download the latest `siga-sync-firefox-vX.X.xpi`
 2. Drag the `.xpi` file into a Firefox/Zen window, **or** go to `about:addons` → gear icon → "Install Add-on From File"
+
+> If a signed `.xpi` isn't available yet, use the `-source.zip` instead: unzip it, go to
+> `about:debugging` → "This Firefox"/"This Zen" → "Load Temporary Add-on..." → select
+> `manifest.json` inside the unzipped folder. Note this method needs to be redone each time
+> the browser restarts.
 
 ### Chrome / Edge / Brave
 
-1. Install from the Chrome Web Store: *(link once approved)*
-2. Or for manual installs: go to `chrome://extensions`, enable **Developer mode**, click **Load unpacked**, and select the `chrome-extension/` folder
+1. Once published on the Chrome Web Store, install via: *(link once approved)*
+2. For manual installs: go to [`releases/`](releases), download the latest
+   `siga-sync-chrome-vX.X.zip`, unzip it, then go to `chrome://extensions`, enable
+   **Developer mode**, click **Load unpacked**, and select the unzipped folder
 
 ---
 
@@ -84,6 +95,37 @@ vercel --prod
 ```
 
 If you redeploy to a new URL, update `BACKEND_URL` in both `firefox-extension/popup.js` and `chrome-extension/popup.js`, and the `host_permissions` / `permissions` in both `manifest.json` files.
+
+---
+
+## Releases (`releases/`)
+
+Each release is a packaged zip (or signed `.xpi` for Firefox) of a specific version of the
+extensions, named `siga-sync-<browser>-v<version>.<ext>`.
+
+### Creating a new release
+
+After making changes and bumping the version number in both `manifest.json` files:
+
+```bash
+# Chrome
+cd chrome-extension
+zip -r ../releases/siga-sync-chrome-vX.X.zip . -x ".*"
+cd ..
+
+# Firefox (source fallback — prefer the signed .xpi from Mozilla if available)
+cd firefox-extension
+zip -r ../releases/siga-sync-firefox-vX.X-source.zip . -x ".*"
+cd ..
+```
+
+Then commit:
+
+```bash
+git add releases/
+git commit -m "Add vX.X release packages"
+git push
+```
 
 ---
 
