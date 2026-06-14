@@ -34,10 +34,6 @@ latest ready-to-use packages — no need to clone the whole repo or load unpacke
 1. Go to [`releases/`](releases) and download the latest `siga-sync-firefox-vX.X.xpi`
 2. Drag the `.xpi` file into a Firefox/Zen window, **or** go to `about:addons` → gear icon → "Install Add-on From File"
 
-> If a signed `.xpi` isn't available yet, use the `-source.zip` instead: unzip it, go to
-> `about:debugging` → "This Firefox"/"This Zen" → "Load Temporary Add-on..." → select
-> `manifest.json` inside the unzipped folder. Note this method needs to be redone each time
-> the browser restarts.
 
 ### Chrome / Edge / Brave
 
