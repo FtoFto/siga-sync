@@ -37,7 +37,7 @@ latest ready-to-use packages — no need to clone the whole repo or load unpacke
 
 ### Chrome / Edge / Brave
 
-1. Once published on the Chrome Web Store, install via: *(link once approved)*
+1. Once published on the Chrome Web Store, install via: [Chrome Extentions]([https://appleid.apple.com](https://chromewebstore.google.com/detail/siga-%E2%86%92-icloud-sync/iijnmjfjhkdkafhcngjamplnipkbhphk?authuser=0&hl=en-GB))
 2. For manual installs: go to [`releases/`](releases), download the latest
    `siga-sync-chrome-vX.X.zip`, unzip it, then go to `chrome://extensions`, enable
    **Developer mode**, click **Load unpacked**, and select the unzipped folder
